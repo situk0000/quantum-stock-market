@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Stock Pattern Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quantum Stock Pattern Finder</h1>
+            <p>Advanced Dashboard for Quantum-Analyzed Market Data</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-link active" data-tab="tab-pattern">Search by Pattern</button>
+            <button class="tab-link" data-tab="tab-date">Search by Date</button>
+            <button class="tab-link" data-tab="tab-volatility">Find High Volatility</button>
+        </nav>
+
+        <main class="tab-content">
+            <div id="tab-pattern" class="tab-pane active">
+                <h2>Search by Custom Price Pattern</h2>
+                <form id="pattern-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="open-price">Open Price</label>
+                            <input type="number" id="open-price" step="0.01" required placeholder="e.g., 150.25">
+                        </div>
+                        <div class="form-group">
+                            <label for="high-price">High Price</label>
+                            <input type="number" id="high-price" step="0.01" required placeholder="e.g., 155.50">
+                        </div>
+                        <div class="form-group">
+                            <label for="low-price">Low Price</label>
+                            <input type="number" id="low-price" step="0.01" required placeholder="e.g., 149.75">
+                        </div>
+                        <div class="form-group">
+                            <label for="close-price">Close Price</label>
+                            <input type="number" id="close-price" step="0.01" required placeholder="e.g., 152.00">
+                        </div>
+                    </div>
+                    <button type="submit">Search by Pattern</button>
+                </form>
+            </div>
+
+            <div id="tab-date" class="tab-pane">
+                <h2>Find Similar Historical Dates</h2>
+                <form id="date-form">
+                    <div class="form-group">
+                        <label for="date-select">Select a Date</label>
+                        <select id="date-select" required>
+                            <option value="">Loading dates...</option>
+                        </select>
+                    </div>
+                    <button type="submit">Find Similar Dates</button>
+                </form>
+            </div>
+
+            <div id="tab-volatility" class="tab-pane">
+                <h2>Find High Volatility Days</h2>
+                <form id="volatility-form">
+                    <div class="form-group">
+                        <label for="vol-top-k">Top K</label>
+                        <input type="number" id="vol-top-k" value="5" min="1" max="20">
+                    </div>
+                    <button type="submit">Find Volatile Days</button>
+                </form>
+            </div>
+        </main>
+
+        <section class="results-section">
+            <div class="loading-spinner" id="loading-spinner" style="display: none;"></div>
+            
+            <div class="chart-container" id="chart-container" style="display: none;">
+                <canvas id="results-chart"></canvas>
+            </div>
+
+            <div id="results-container" class="results-container">
+                </div>
+        </section>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

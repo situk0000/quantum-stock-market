@@ -27,7 +27,8 @@
 ## 🎨 Dashboard Preview
 
 ```
-<img width="1878" height="869" alt="image" src="https://github.com/user-attachments/assets/ad365164-ce3f-4957-a512-dba1c837f667" />
+<img width="1884" height="862" alt="image" src="https://github.com/user-attachments/assets/5a104bd4-21b3-44ed-8b3c-bab5c1fa760f" />
+
 
 ```
 
